@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Smart Canteen • Room Delivery</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><div class="brand">🍱 <span><b>Smart Canteen</b><small>Campus food, delivered.</small></span></div>
+<nav><button class="active" data-page="menu">Menu</button><button data-page="orders">My Orders</button><button data-page="delivery">Delivery Staff</button></nav>
+<button class="cart" onclick="openCart()">🛒 <b id="count">0</b></button></header>
+<main>
+<section id="menu" class="page active">
+<div class="hero"><div><label>BETTER TOMORROW</label><h1>Skip the queue.<br><em>Eat in your room.</em></h1><p>Order your canteen food from anywhere on campus and track it until it reaches your room.</p></div><div class="heroBox"><span>🚴</span><b>Room delivery</b><strong>10–15 min</strong><small>Average delivery time</small></div></div>
+<div class="bar"><div><h2>Today's menu</h2><p>Freshly prepared • Live availability</p></div><div class="filters"><button class="active" data-filter="all">All</button><button data-filter="breakfast">Breakfast</button><button data-filter="lunch">Lunch</button><button data-filter="snacks">Snacks</button></div></div>
+<div id="foodGrid" class="grid"></div>
+</section>
+<section id="orders" class="page"><div class="title"><label>TRACKING</label><h1>Your orders</h1><p>See your delivery status and room details.</p></div><div id="orderList"></div></section>
+<section id="delivery" class="page"><div class="title"><label>DELIVERY STAFF</label><h1>Delivery dashboard</h1><p>Manage orders waiting to be delivered.</p></div><div class="stats"><div><small>Active deliveries</small><b id="active">3</b></div><div><small>Orders today</small><b id="today">47</b></div><div><small>Avg. delivery</small><b>12 min</b></div></div><div class="panel"><h2>Delivery queue</h2><div id="deliveryList"></div></div><div class="panel"><h2>Menu availability</h2><div id="adminMenu"></div></div></section>
+</main>
+<div id="toast"></div>
+<div id="modal" class="modal hidden"><div class="modalBox"><button class="x" onclick="closeCart()">×</button><h2>Complete your order</h2><div id="cart"></div><div class="total"><span>Food total</span><b id="foodTotal">₹0</b></div>
+<div class="deliveryChoice"><b>Delivery method</b><label><input type="radio" name="method" value="room" checked> 🚴 Deliver to my room <span>₹5</span></label><label><input type="radio" name="method" value="pickup"> 🏪 Pickup at canteen <span>Free</span></label></div>
+<div id="roomFields"><label>Building / Block</label><input id="block" placeholder="e.g. A Block"><div class="two"><div><label>Floor</label><input id="floor" placeholder="2"></div><div><label>Room number</label><input id="room" placeholder="204"></div></div><label>Phone (optional)</label><input id="phone" placeholder="10-digit number"></div>
+<div class="total"><span>Grand total</span><b id="grand">₹0</b></div><button class="primary" onclick="placeOrder()">Place order</button></div></div>
+<script src="app.js"></script></body></html>
